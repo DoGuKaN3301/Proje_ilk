@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Panel</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<div class="container">
+<div class="overlay">
+<body id="index_arkaplan" background="/static/images/indir.jpg">
+</div>   
+    <h1>Admin Control Panel</h1>
+    <div class="card">
+        <h2>KULLANICI YÖNETİMİ</h2>
+        <p>KULLANICILARI YÖNETMEK , BİLGİLERİNİ DEĞİŞTİRMEK VEYA SİLMEK İÇİN TIKLAYINIZ</p>
+        <a href="{{ url_for('kullanici_bilgileri') }}" class="button">KULLANICILARI YÖNET</a>
+    </div>
+
+    <div class="card">
+        <h2>KULLANICI EKLE</h2>
+        <p>YENİ KULLANICI EKLEMEK İÇİN TIKLAYINIZ</p>
+        <a href="{{ url_for('kullanici_ekle') }}" class="button">YENİ KULLANICI EKLE</a>
+    </div>
+
+    <div class="card">
+        <h2>Settings</h2>
+        <p>Manage system settings and configurations.</p>
+        <a href="#" class="button">Go to Settings</a>
+    </div>
+    <div>
+        <a href="{{ url_for('anasayfa') }}" class="button" id = "geri" >ANASAYFA</a>
+        <a href="{{ url_for('cikis') }}" class="button" id = "geri">CIKIŞ</a>
+
+    </div>
+</div>
+
+</body>
+</html>

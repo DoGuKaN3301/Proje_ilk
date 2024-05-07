@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIDA EKLE</title>
+    <link rel="stylesheet" href="/static/css/gidagn.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                YENİ GIDA EKLE
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('gida_ekle') }}" method="post" enctype="multipart/form-data">
+                    <label for="ad">Ad</label>
+                    <input type="text" id="ad" name="ad" placeholder="Gıda adını giriniz" required>
+                    <label for="kalori">Kalori</label>
+                    <input type="text" id="kalori" name="kalori" placeholder="Kalori değerini giriniz" required>
+                    <label for="durum">Durum</label>
+                    <select id="durum" name="durum" required>
+                        <option value="yararlı" selected>Yararlı</option>
+                        <option value="zararlı">Zararlı</option>
+                    </select>
+                    <select id="durum" name="katogori" required>
+                        <option value="meyve" selected>Meyve</option>
+                        <option value="sebze">Sebze</option>
+                        <option value="içecek">içecek</option>
+                        <option value="fast-food">fast-food</option>
+                    </select>
+                    <button type="submit" id="ekle">Ekle</button>
+                    {% if hata %}
+                        <p class="error">{{ hata }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

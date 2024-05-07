@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYTHON IDE</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <ul>
+        <a href="{{ url_for('anasayfa') }}"><img src="/static/images/logo.jpg" id="navbarrsm" alt=""></a>
+        
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Yazılım Dilleri</a>
+          <div class="dropdown-content">
+            <a href="{{ url_for('python') }}">Python</a>
+            <a href="{{ url_for('c_plus') }}">C++/C</a>
+            <a href="{{ url_for('c_sharp') }}">C#</a>
+            <a href="{{ url_for('php') }}">PHP</a>
+            
+          </div>
+          
+        </li>
+        <div id="saat"></div>
+      </ul>
+    <iframe src="https://trinket.io/embed/python/e9dfbea7b7" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</body>
+</html>

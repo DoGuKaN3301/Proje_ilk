@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <title>Yazılım hühendisi</title>
+<head>
+  <script src="/static/js/script.js"></script>
+<link rel="stylesheet" href="/static/css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</head>
+<div class="overlay">
+  <body id="index_arkaplan" background="/static/images/indir.jpg">
+</div>
+<ul>
+  {% if kullaniciadi %}
+  <p id="kullanici">{{ kullaniciadi }} </p>
+{% endif %}
+<div id = "cık">
+<a href="{{ url_for('cikis') }}" id = "cık" >CIKIŞ</a>
+</div>
+  <a href="{{ url_for('anasayfa') }}"><img src="/static/images/logo.jpg" id="navbarrsm" alt=""></a>
+  
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Yazılım Dilleri</a>
+    <div class="dropdown-content">
+      <a href="{{ url_for('python') }}">Python</a>
+      <a href="{{ url_for('c_plus') }}">C++/C</a>
+      <a href="{{ url_for('c_sharp') }}">C#</a>
+      <a href="{{ url_for('php') }}">PHP</a>
+
+
+      
+    </div>
+    
+  <li id ="grs" ><a href="{{ url_for('giris') }}"><i class="fas fa-home ev-icon"> </i></a></li>
+  </li>
+  <div id="saat"></div>
+</ul>
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anasayfa</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body id="index_arkaplan" background="/static/images/indir.jpg">
+  <div class="overlay"></div>
+
+  <ul>
+    {% if kullaniciadi %}
+    <p id="kullanici">{{ kullaniciadi }}</p>
+    {% endif %}
+    <div id="cık">
+      <a href="{{ url_for('cikis') }}" id="cık">CIKIŞ</a>
+    </div>
+  
+    <a href="{{ url_for('anasayfa') }}"><img src="/static/images/indir.jpg" id="navbarrsm" alt=""></a>
+    <li><a href="{{ url_for('anasayfa') }}">Anasayfa</a></li>
+    <li><a href="{{ url_for('bolum') }}">Bölümler</a></li>
+    <li id="grs"><a href="{{ url_for('giris') }}"><i class="fas fa-home ev-icon"></i></a></li>
+    <div id="saat"></div>
+  </ul>
+  <div class="bildir" align="center">
+    <div class="content">
+      <div class="yazi">
+        <h3>Anasayfaya hoşgeldiniz</h3>
+        <p id="degisenYazi">site yapım aşamasındadır</p>
+      </div>
+      <div class="slayt-container">
+        <img class="slayt-foto" src="/static/images/giris/1.jpg" alt="Fotoğraf 1">
+        <img class="slayt-foto" src="/static/images/giris/2.jpg" alt="Fotoğraf 2">
+        <img class="slayt-foto" src="/static/images/giris/3.jpg" alt="Fotoğraf 3">
+        <img class="slayt-foto" src="/static/images/giris/4.jpg" alt="Fotoğraf 4">
+        <img class="slayt-foto" src="/static/images/giris/5.jpg" alt="Fotoğraf 5">
+    </div>
+  </div>
+  </div>
+  <script src="/static/js/slayt.js"></script>
+</body>
+</html>

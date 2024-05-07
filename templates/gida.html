@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gıda</title>
+    <link rel="stylesheet" href="/static/css/sty.css">
+    <link rel="stylesheet" href="/static/css/gida.css">
+</head>
+<body>
+    <ul>
+        {% if kullaniciadi %}
+        <p id="kullanici">{{ kullaniciadi }} </p>
+      {% endif %}
+      <div id = "cık">
+      <a href="{{ url_for('cikis') }}" id = "cık" >CIKIŞ</a>
+      </div>
+        
+        <a href="{{ url_for('anasayfa') }}"><img src="/static/images/indir.jpg" id="navbarrsm" alt=""></a>
+        <li><a href="{{ url_for('anasayfa') }}">Anasayfa</a></li>
+            <div id="saat"></div>
+          </div>
+        </li>
+      </ul>
+    <header>
+        <h1>{{ first_char_upper }}  Kalorileri Ve  Özellikler</h1>
+
+    </header>
+    <div class="container" id="fruitsContainer">
+        <!-- Meyveler buraya dinamik olarak eklenecek -->
+    </div>
+
+    <div class="container">
+        {% for adm in gida %}
+        <div class="card">
+            <div class="card-header">
+                ID: {{ adm[0] }}
+            </div>
+            <div class="card-body">
+                <p><strong>Ad:</strong> {{ adm[1] }}</p>
+                <p><strong>Kalori:</strong> {{ adm[2] }}</p>
+                <p><strong>Durum:</strong> {{ adm[3] }}</p>
+                <p><strong>Katogori:</strong> {{ adm[4] }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="/gida/guncelle/{{ adm[0] }}" class="buton">Güncelle</a>
+                <a href="/gida/sil/{{ adm[0] }}" class="buton">Sil</a>
+            </div>
+        </div>
+       
+
+        {% endfor %}
+        
+    </div>
+<div id="sorgu">
+    <form action="{{ url_for('gida_sorgu') }}" method="post">
+        <select id="durum" name="durum" required>
+            <option value="yararlı">Yararlı</option>
+            <option value="zararlı">Zararlı</option>
+        </select>
+        <select id="katogori" name="katogori" required>
+            <option value="meyve" selected>Meyve</option>
+            <option value="sebze">Sebze</option>
+            <option value="içecek">İçecek</option>
+            <option value="fast-food">Fast-Food</option>
+        </select>
+        <button type="submit">Sorgula</button>
+    </form>
+</div>
+    <div>
+        
+        <a href="{{ url_for('gida_ekle') }}" class="buton" id="gida_ekle">EKLE</a>
+    </div>
+   
+</body>
+</html>

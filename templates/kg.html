@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bölümler</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/kg.css">
+</head>
+<body> 
+  <div class="login-container" id="login-container">
+    <img src="/static/images/kg/RESİM.jpg" id="resim" class="resimler" >
+    <img src="/static/images/kg/ress.jpg" id="resim1" class="resimler">
+    <img src="/static/images/kg/Adsız tasarım (1).jpg" id="resim2" class="resimler">
+    <img src="/static/images/kg/Adsız tasarım.jpg" id="resim3" class="resimler">
+    <img src="/static/images/kg/yazilim-sirketi.jpg" id="resim5" class="resimler">
+    <img src="/static/images/kg/yazılım.jpg" id="resim6" class="resimler">
+    <form class="login-form" action="{{ url_for('bolumkontrol') }}" method="post">
+      <h2>GİRİŞ</h2>
+      <div class="input-group">
+        <i class="fa fa-user icon"></i>
+        <input class="input-field" type="text" id="username" name="kullaniciadi" placeholder="Kullanıcı adını giriniz" required> 
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock icon"></i>
+        <input class="input-field" type="password" id="password" name="sifre" placeholder="Şifrenizi giriniz" required>
+        <span class="toggle-password" onclick="togglePassword()"><i class="fas fa-eye"></i></span>
+      </div>
+      
+      <button type="submit">Login</button>
+      {% if hata %}
+					<script>
+						document.addEventListener("DOMContentLoaded", function() {
+							alert("{{ hata }}");
+						});
+					</script>
+				{% endif %}
+    </form>
+  </div>
+  <script src="/static/js/kg.js"></script>
+</body>
+</html>

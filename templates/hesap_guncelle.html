@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Ayarları</title>
+    <link rel="stylesheet" href="/static/css/hesap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Hesap Ayarları
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('kullanici_ayarlari') }}" method="post" enctype="multipart/form-data">
+                    <label for="ad">Ad</label>
+                    <input type="text" id="ad" name="ad" value="{{ user.ad }}" placeholder="Adınızı giriniz" required>
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" value="{{ user.email }}" placeholder="E-Mail giriniz" required>
+                    <label for="sifre">Şifre</label>
+                    <input type="password" id="sifre" name="sifre" placeholder="Yeni şifre giriniz">
+                    <label for="bolum">Bölüm</label>
+                    <select id="bolum" name="bolum" required>
+                        <option value="gida" {% if user.bolum == "gida" %} selected {% endif %}>Gıda</option>
+                        <option value="ziraat" {% if user.bolum == "ziraat" %} selected {% endif %}>Ziraat</option>
+                    </select>
+                    <button type="submit">Güncelle</button>
+                    {% if hata %}
+                        <p class="error">{{ hata }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

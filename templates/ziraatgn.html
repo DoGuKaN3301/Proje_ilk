@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZİRAAT GÜNCELLE</title>
+    <link rel="stylesheet" href="/static/css/ziraatgn.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                ZİRAAT BİLGİLERİ GÜNCELLE
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('ziraat_guncelle') }}" method="post" enctype="multipart/form-data">
+                    <label for="id">ID</label>
+                    <input type="text" id="id" name="id" value="{{ ziraat[0] }}" readonly>
+                    <label for="ad">Ad</label>
+                    <input type="text" id="ad" name="ad" value="{{ ziraat[1] }}" placeholder="Mahsul Adı Giriniz" required>
+                    <label for="ekim zamanı">Ekim Zamanı</label>
+                    <input type="text" id="ekim_zamanı" name="ekim_zamanı" value="{{ ziraat[2] }}" placeholder="Ekim Zamanını Giriniz" required>
+                    <label for="gübre">Gübre</label>
+                    <input type="text" id="gubre" name="gubre" value="{{ ziraat[3] }}" placeholder="Kullanılan Gübreyi Giriniz" required>
+                    <label for="alınan_mahsul">Alınan Mahsul (TON)</label>
+                    <input type="text" id="alınan_mahsul" name="alınan_mahsul" value="{{ ziraat[4] }}" placeholder="Alınan Mahsulu Giriniz (TON)" required>
+                    <label for="il">İl</label>
+                    <input type="text" id="il" name="il" value="{{ ziraat[5] }}" placeholder="İli giriniz" required>
+                    <button type="submit" id="guncelle">Güncelle</button>
+                    {% if hata %}
+                        <p class="error">{{ hata }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    

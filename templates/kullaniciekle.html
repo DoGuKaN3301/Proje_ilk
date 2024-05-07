@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Ekleme Formu</title>
+    <link rel="stylesheet" href="/static/css/kullaniciekle.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Kullanıcı Ekleme Formu</h2>
+        <form action="{{ url_for('kullanici_ekle') }}" method="post" enctype="multipart/form-data">
+            <input type="text" id="ad" name="ad" required placeholder="İsiminizi giriniz">
+
+            <input type="email" id="email" name="email" required placeholder="E-mail giriniz">
+
+            <input type="password" id="sifre" name="sifre" required placeholder="Şifre giriniz">
+
+            <select id="tur" name="tur" required>
+                <option value="Admin" selected>Admin</option>
+                <option value="Kullanıcı">Kullanıcı</option>
+            </select>
+            
+            <select id="bolum" name="bolum" required>
+                <option value="Admin" selected>Admin</option>
+                <option value="Gıda">Gıda</option>
+                <option value="Ziraat">Ziraat</option>
+                <option value="Yazılım">Yazılım</option>
+                <option value="Bilgisayar">Bilgisayar</option>
+            </select>
+
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+    <script>
+        var turSelect = document.getElementById("tur");
+        var bolumSelect = document.getElementById("bolum");
+
+        turSelect.addEventListener("change", function() {
+            if (turSelect.value === "admin") {
+                bolumSelect.selectedIndex = 0; // İlk seçeneği seç
+                bolumSelect.disabled = true; // Bölüm seçimini devre dışı bırak
+            } else {
+                bolumSelect.disabled = false; // Bölüm seçimini etkinleştir
+            }
+        });
+
+        bolumSelect.addEventListener("change", function() {
+            if (turSelect.value === "kullanici" && bolumSelect.value === "admin") {
+                alert("Kullanıcılar için bölüm seçimi 'Admin' olamaz!");
+                bolumSelect.selectedIndex = 0; // İlk seçeneği seç
+            }
+        });
+    </script>
+</body>
+</html>

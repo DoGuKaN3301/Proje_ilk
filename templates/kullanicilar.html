@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KULLANICI BİLGİLERİ</title>
+    <link rel="stylesheet" href="/static/css/kullanicilar.css">
+</head>
+<body>
+   
+    <div class="container">
+        {% for adm in personel %}
+        <div class="card">
+            <div class="card-header">
+                ID: {{ adm[0] }}
+            </div>
+            <div class="card-body">
+                <p><strong>Ad:</strong> {{ adm[1] }}</p>
+                <p><strong>E-Mail:</strong> {{ adm[2] }}</p>
+                <p><strong >Şifre:</strong> ***</p>
+                <p><strong>Tür:</strong> {{ adm[4] }}</p>
+                <p><strong>Bölüm:</strong> {{ adm[5] }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="/admin_panel/kullanici_bilgileri/guncelle/{{ adm[0] }}" class="buton">Güncelle</a>
+                <a href="/admin_panel/kullanici_bilgileri/sil/{{ adm[0] }}" class="buton">Sil</a>
+            </div>
+        </div>
+        
+        {% endfor %}
+        
+    </div>
+    <a href="/admin_panel" id ="kl" ><i class="fa fa-home" aria-hidden="true"></i> &nbsp;<p id="a">GERİ</p></a>
+    <a href="/" id ="kl" ><i class="fa fa-home" aria-hidden="true"></i> &nbsp;<p id="a">ANASAYFA</p></a>
+   
+</body>
+</html>

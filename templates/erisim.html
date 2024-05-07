@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/static/css/erisim.css">
+</head>
+<!-- adminlerin tüm sitelere erişecek olduğu site  -->
+<body>
+    
+    <div class="container">
+        <a href="{{ url_for('muhyazilim') }}">Yazılım</a>   
+        <a href="{{ url_for('muhbilgisayar') }}">Bilgisayar</a>
+        <a href="{{ url_for('gida') }}">Gıda</a>
+        <a href="{{ url_for('ziraat') }}">Ziraat</a>
+    </div>
+</body>
+</html>

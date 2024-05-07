@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIDA GÜNCELLE</title>
+    <link rel="stylesheet" href="/static/css/gidagn.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                GIDA BİLGİLERİ GÜNCELLE
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('gida_guncelle') }}" method="post" enctype="multipart/form-data">
+                    <label for="id">ID</label>
+                    <input type="text" id="id" name="id" value="{{ gida[0] }}" readonly>
+                    <label for="ad">Ad</label>
+                    <input type="text" id="ad" name="ad" value="{{ gida[1] }}" placeholder="Adını giriniz" required>
+                    <label for="kalori">Kalori</label>
+                    <input type="text" id="kalori" name="kalori" value="{{ gida[2] }}" placeholder="kalori giriniz" required>
+                    <label for="durum">Durum</label>
+                    <select id="durum" name="durum" required  >
+                        <option value="Yararlı" selected>Yararlı</option>
+                        <option value="Zararlı">Zararlı</option>
+                    </select>
+                    <select id="katogori" name="katogori" required  >
+                        <option value="Meyve" selected>Meyve</option>
+                        <option value="Sebze">Sebze</option>
+                        <option value="İçecek">İçecek</option>
+                        <option value="Fast-Food">Fast-Food</option>
+
+                    </select>
+                    <button type="submit" id="guncelle">Güncelle</button>
+                    {% if hata %}
+                        <p class="error">{{ hata }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    
