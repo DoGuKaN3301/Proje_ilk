@@ -48,6 +48,7 @@ input[type="password"] {
 }
 
 button {
+    margin-top: 20px;
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -74,10 +75,12 @@ button:hover {
     margin-bottom: 10px;
 }
 #ekim_zamanı{
+    margin-top: 8px;
     font-size: 20px;
     margin-bottom: 10px;
 }
 #gubre{
+
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -93,3 +96,12 @@ button:hover {
     align-items: center;
     text-align: center;
 }
+
+select{
+    font-size: 18px; /* İstenilen boyutu ayarlayabilirsiniz */
+    padding: 10px; /* Seçenek kutusunun içeriğinden dışarı doğru boşluk */
+    width: 200px; /* Seçenek kutusunun genişliği */
+    height: 45px; /* Seçenek kutusunun yüksekliği */
+    
+  }
+  

@@ -2,6 +2,7 @@ h1{
     background-color: #333;
     text-align: center;
     height: 45px;
+    border-radius: 25px;
 }
 .container {
     display: flex;
@@ -27,6 +28,7 @@ h1{
 
 .card-body {
     padding: 15px;
+    background-color: antiquewhite;
 }
 
 .card-footer {
@@ -51,16 +53,16 @@ h1{
     background-color: #eee;
 }
 /* Ekle butonu stilini güncelle */
-#gida_ekle {
+#gida_ekle{
     display: flex;
     justify-content: center;
     align-items: center; /* Dikey olarak ortala */
     text-decoration: none;
     background-color: bisque;
     border-radius: 10px;
-    height: 35px;
-    width: 500px;
-    font-size: 20px;
+    height: 40px;
+    width: 550px;
+    font-size: 22px;
     margin: 0 auto; /* Yatay olarak ortala */
     transition: background-color 0.3s ease-in-out; /* Arka plan geçiş efekti */
     margin-top: 50px;

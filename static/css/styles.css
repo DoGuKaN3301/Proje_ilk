@@ -1,3 +1,8 @@
+#index_arkaplan{
+  background-attachment: fixed;
+  
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -95,7 +100,7 @@ width: 205px;
 }
 
 .bildir{
-  margin-top: 50px;
+  margin-top: 250px;
 }
 
 #navbarrsm{
@@ -123,22 +128,22 @@ width: 205px;
 
 
 body {
-  /* background-image: url('/static/images/indir.jpg'); */
   background-repeat:no-repeat;
-  background-position: center top;
-  
+  background-position: center top 50%; /* arka planı biraz aşağıya alır  */
+  height: 800px;
  
 }
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 105%;
-  background-color: white; /* Beyaz bir renk katmanı ekleyin */
+  height: 150%;
+  background-color: white; /* Beyaz bir renk  manı ekleyin */
   opacity: 0.9; /* Opaklık değeri 0 ile 1 arasında olmalıdır */
   z-index: -1; /* Arka plan resminin altında kalacak şekilde z-index ayarı */
-  background-position: center top -10%; /* Arka planın konumunu belirtmek için */
+
 }
 
   
@@ -150,7 +155,7 @@ body {
 
 
 #saat {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: #333; /* Saat rengi */
   /* İstenilen diğer stiller */
@@ -188,49 +193,124 @@ body {
 
 #kullanici{
   display: block;
-  margin-top: 20px;
-  background-color: #a36767;
+  margin-top: 18px;
+  /* background-color: #a36767; */
   border-radius: 10px;
-  margin-left: 89%;
+  margin-left: 85%;
   position: absolute;
   font-size: 22px;
+  color: rgb(4, 0, 255);
 }
-#cık{
+
+#cıkıs{
   display: block;
   text-decoration: none;
-  margin-top: 30px;
-  background-color: #a36767;
+  margin-top: 18px;
+  /* background-color: #a36767; */
   border-radius: 10px;
-  margin-left: 95%;
-  position: absolute;
+  margin-left: 90%;
+  position: fixed;
   font-size: 20px;
+  color:#f00505;
 }
 
 /* ekranda slayt gosterimi için css kodları */
 .slayt-container {
   position: relative;
-  max-width: 800px; /* Resimlerin maksimum genişliği */
-  max-height: 600px; /* Resimlerin maksimum yüksekliği */
+  max-width: 45%; /* Resimlerin maksimum genişliği */
+  max-height: 800px; /*Resimlerin maksimum yüksekliği  */
   overflow: hidden;
-  margin-left: 80½;
+  border-radius: 25px;
+  margin-left: 500px;
+  border-radius: 25px;
 }
-
-.slayt-foto {
-  display: none;
-  width: 100%; /* Resimlerin genişliği %100 olacak */
-  height: 100%; /* Resimlerin yüksekliği %100 olacak */
-  border-radius: 10px;
+ 
+ .slayt-foto {
+  display: flex;
+  width: 70%;  
+  height: 50%;  
+  border-radius: 25px;
   top: 0;
-  left: 0;
-}
+  justify-content: center;
+  margin-left: 199px;
+
+
+}  
 
 .slayt-foto:first-child {
   display: block;
 }
 #degisenYazi{
   position: absolute;
-  margin-left: 100px;
+  margin-left: 400px;
   display: block;
-  width: 450px;
+  width: 500px;
   font-size: 35px;
+  z-index: 1;
 }
+
+#nav {
+  /* background-color: #f00505;*/
+  position: fixed; 
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+#yapay{
+position: absolute;
+margin-left: 15%;
+margin-top: 15px;
+text-decoration: none;
+font-size: 18px;
+border-radius: 15px;
+background-color:aqu;
+width: 100px;
+height: 25px;
+text-align: center;
+}
+
+#yapay:hover{
+  background-color: #f00505;
+}
+
+
+
+
+#yapayz {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+ }
+ 
+ #yapayz::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ #yapayz:hover::before {
+  width: 9em;
+ }
+
+
+
+ 
